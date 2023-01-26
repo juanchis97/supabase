@@ -1,0 +1,96 @@
+Sub Macro1()
+'
+' Macro1 Macro
+' Primer intento
+'
+Dim contador As Integer
+    Sheets("Relacion Tanqueo").Select
+    Range("AB3").Select
+    ActiveCell.FormulaR1C1 = "=COUNTA(C[-25])-1"
+    contador = Range("AB3").Value
+    Range("AB3").Select
+    ActiveCell.FormulaR1C1 = ""
+Dim var As String
+Dim I As Integer
+For I = 1 To contador
+'Celda 1
+    Sheets("Relacion Tanqueo").Select
+    Range("C2").Select
+    ActiveCell.Offset(I).Select
+    var = ActiveCell.Value
+    ActiveCell.Offset(0, -1).Select
+    Selection.Copy
+    Sheets(var).Select
+    Range("B" & Rows.Count).End(xlUp).Offset(1, 0).PasteSpecial
+    ActiveSheet.Paste
+    Sheets("Compilado").Select
+    Range("B" & Rows.Count).End(xlUp).Offset(1, 0).PasteSpecial
+    ActiveSheet.Paste
+'Celda 2
+    Sheets("Relacion Tanqueo").Select
+    Range("C2").Select
+    ActiveCell.Offset(I).Select
+    var = ActiveCell.Value
+    ActiveCell.Offset(0, 2).Select
+    Selection.Copy
+    Sheets(var).Select
+    Range("D" & Rows.Count).End(xlUp).Offset(1, 0).PasteSpecial
+    ActiveSheet.Paste
+    Sheets("Compilado").Select
+    Range("D" & Rows.Count).End(xlUp).Offset(1, 0).PasteSpecial
+    ActiveSheet.Paste
+'Celda 3
+    Sheets("Relacion Tanqueo").Select
+    Range("C2").Select
+    ActiveCell.Offset(I).Select
+    var = ActiveCell.Value
+    ActiveCell.Offset(0, 4).Select
+    Selection.Copy
+    Sheets(var).Select
+    Range("F" & Rows.Count).End(xlUp).Offset(1, 0).PasteSpecial
+    ActiveSheet.Paste
+    Sheets("Compilado").Select
+    Range("F" & Rows.Count).End(xlUp).Offset(1, 0).PasteSpecial
+    ActiveSheet.Paste
+'Celda 4
+    Sheets("Relacion Tanqueo").Select
+    Range("C2").Select
+    ActiveCell.Offset(I).Select
+    var = ActiveCell.Value
+    ActiveCell.Offset(0, 3).Select
+    Selection.Copy
+    Sheets(var).Select
+    Range("H" & Rows.Count).End(xlUp).Offset(1, 0).PasteSpecial
+    ActiveSheet.Paste
+    Sheets("Compilado").Select
+    Range("H" & Rows.Count).End(xlUp).Offset(1, 0).PasteSpecial
+    ActiveSheet.Paste
+'Celda 5
+    Sheets("Relacion Tanqueo").Select
+    Range("C2").Select
+    ActiveCell.Offset(I).Select
+    var = ActiveCell.Value
+    ActiveCell.Offset(0, 5).Select
+    Selection.Copy
+    Sheets(var).Select
+    Range("I" & Rows.Count).End(xlUp).Offset(1, 0).PasteSpecial
+    ActiveSheet.Paste
+    Sheets("Compilado").Select
+    Range("I" & Rows.Count).End(xlUp).Offset(1, 0).PasteSpecial
+    ActiveSheet.Paste
+'Celda 6
+    Sheets("Relacion Tanqueo").Select
+    Range("C2").Select
+    ActiveCell.Offset(I).Select
+    var = ActiveCell.Value
+    Range("J3").Select
+    Selection.Copy
+    Sheets(var).Select
+    Range("C" & Rows.Count).End(xlUp).Offset(1, 0).PasteSpecial
+    ActiveSheet.Paste
+    Sheets("Compilado").Select
+    Range("C" & Rows.Count).End(xlUp).Offset(1, 0).PasteSpecial
+    ActiveSheet.Paste
+    var = ""
+    Next I
+End Sub
